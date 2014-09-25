@@ -10,8 +10,8 @@ module.exports = function (grunt) {
 
     // Configurable paths for the application
     var appConfig = {
-        app: require('./bower.json').appPath || 'app',
-        dist: require('./bower.json').distPath || 'dist'
+        app: require('./.yo-rc.json')['generator-angularjs-silex'].srcfolder,
+        dist: require('./.yo-rc.json')['generator-angularjs-silex'].distfolder
     };
 
     var gatewayRw = require('gateway-rewrite');

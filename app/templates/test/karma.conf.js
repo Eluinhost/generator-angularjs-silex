@@ -23,7 +23,7 @@ module.exports = function (config) {
             'bower_components/angular-animate/angular-animate.js',
             'bower_components/angular-cookies/angular-cookies.js',
             'bower_components/angular-ui-router/release/angular-ui-router.js',
-            'app/**/*.js',
+            require('./../.yo-rc.json')['generator-angularjs-silex'].srcfolder + '/**/*.js',
             'test/mock/**/*.js',
             'test/spec/**/*.js'
         ],
