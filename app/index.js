@@ -62,33 +62,28 @@ var AngularjsSilexGenerator = yeoman.generators.Base.extend({
     writing: {
         app: function () {
             var appFolder = this.config.get('srcfolder');
-            this.dest.mkdir(appFolder);
             this.src.copy('app/robots.txt', appFolder + '/robots.txt');
             this.template('app/index.html', appFolder + '/index.html');
             this.template('app/app.js',     appFolder + '/app.js');
             this.src.copy('app/main.sass',  appFolder + '/main.sass');
 
             //api folder
-            this.dest.mkdir('app/api');
             this.src.copy('app/api/.htaccess', appFolder + '/api/.htaccess');
             this.template('app/api/index.php', appFolder + '/api/index.php');
         },
 
         test: function() {
-            this.dest.mkdir('test');
             this.src.copy('test/jshintrc', 'test/.jshintrc');
             this.src.copy('test/karma.conf.js', 'test/karma.conf.js');
         },
 
         config: function() {
-            this.dest.mkdir('config');
             this.src.copy('config/config.yml', 'config/config.yml');
             this.src.copy('config/config_dev.yml', 'config/config_dev.yml');
             this.src.copy('config/config_prod.yml', 'config/config_prod.yml');
         },
 
         php: function() {
-            this.dest.mkdir('src');
             this.template('src/Home.php', 'src/Home.php');
         },
 
