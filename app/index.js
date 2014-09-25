@@ -5,6 +5,8 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
 
+//TODO Generate a base component for use
+
 var AngularjsSilexGenerator = yeoman.generators.Base.extend({
     initializing: function () {
         this.argument('appname', { type: String, required: false });
