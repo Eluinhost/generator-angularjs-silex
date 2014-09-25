@@ -1,5 +1,5 @@
 {
-    "name": "<%= author %>/<%= _.slugify(appname) %>",
+    "name": "<%= author %>/<%= _.slugify(_.humanize(appname)) %>",
     "require": {
         "php": ">=5.3.3",
         "silex/silex": "~1.2",
