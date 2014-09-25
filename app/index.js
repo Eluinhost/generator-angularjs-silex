@@ -9,7 +9,7 @@ var AngularjsSilexGenerator = yeoman.generators.Base.extend({
     initializing: function () {
         this.argument('appname', { type: String, required: false });
         this.appname = this.appname || path.basename(process.cwd());
-        this.appname = this._.camelize(this._.slugify(this._.humanize(this.appname)));
+        this.appname = this._.classify(this._.slugify(this._.humanize(this.appname))) + 'App';
         this.config.set('appname', this.appname);
     },
 
