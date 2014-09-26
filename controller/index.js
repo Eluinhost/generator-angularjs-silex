@@ -18,16 +18,14 @@ var AngularjsSilexGenerator = ScriptBase.extend({
     },
 
     install: function() {
-        var file = fs.readFileSync(this.srcFolder + '/index.html');
-        var $ = cheerio.load(file);
+        var $ = cheerio.load(this.readFileAsString(this.srcFolder + '/index.html'));
 
         var scriptName = this.srcFolder + '/' + this.component + '/' + this.scriptName + '.js';
 
         if($('script[src="' + scriptName + '"]').length == 0) {
             $('script[src="app.js"]').after('\n<script src="' + scriptName +'"></script>');
+            this.writeFileFromString($.html(), this.srcFolder + '/index.html');
         }
-
-        fs.writeFileSync(this.srcFolder + '/index.html', $.html());
     }
 });
 
