@@ -9,7 +9,7 @@ var AngularjsSilexGenerator = ScriptBase.extend({
     },
 
     writing: function () {
-        this.template('view.html', this.srcFolder + '/' + this.component + '/' + this.scriptName + '.html');
+        this.template('view.html', this.srcFolder + '/components/' + this.component + '/' + this.scriptName + '.html');
     }
 });
 

@@ -8,14 +8,14 @@ var AngularjsSilexGenerator = ScriptBase.extend({
     },
 
     writing: function () {
-        this.template('style.sass', this.srcFolder + '/' + this.component + '/_' + this.scriptName + '.sass');
+        this.template('style.sass', this.srcFolder + '/components/' + this.component + '/_' + this.scriptName + '.sass');
     },
 
     install: function() {
         var file = this.readFileAsString(this.srcFolder + '/main.sass');
 
-        if(file.search(this._escapeRegex('@import ' + this.component + '/' + this.scriptName)) === -1) {
-            this.writeFileFromString(file + '\n@import ' + this.component + '/' + this.scriptName, this.srcFolder + '/main.sass');
+        if(file.search(this._escapeRegex('@import components/' + this.component + '/' + this.scriptName)) === -1) {
+            this.writeFileFromString(file + '\n@import components/' + this.component + '/' + this.scriptName, this.srcFolder + '/main.sass');
         }
     },
 
