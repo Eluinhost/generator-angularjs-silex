@@ -1,46 +1,41 @@
 # generator-angularjs-silex [![Build Status](https://secure.travis-ci.org/Eluinhost/generator-angularjs-silex.png?branch=master)](https://travis-ci.org/Eluinhost/generator-angularjs-silex)
 
-> [Yeoman](http://yeoman.io) generator
+> A [Yeoman](http://yeoman.io) generator for generating an AngularJS application with a Silex PHP API
 
+## Generators
 
-## Getting Started
+`angularjs-silex:app` / `angularjs-silex`
 
-### What is Yeoman?
+Generates an application, pass the name of the application as an argument. Generates a default API endpoint as well as
+a default component.
 
-Trick question. It's not a thing. It's this guy:
+`angularjs-silex:api`
 
-![](http://i.imgur.com/JHaAlBJ.png)
+Adds a new class with the given name with an endpoint action and adds it to the API index.php
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
+`angularjs-silex:component`
 
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+Calls `controller`, `view` and `style` for the component name supplied. They all share the same name
 
-```bash
-npm install -g yo
-```
+`angularjs-silex:controller`
 
-### Yeoman Generators
+Generates a controller with the name given for the component that is asked for (provide --component=name to skip the
+prompt). Automatically adds the generated file to the index.html
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
+`angularjs-silex:style`
 
-To install generator-angularjs-silex from npm, run:
+Generates a SASS partial with the name given for the component that is asked for (provide --component=name to skip the
+prompt). Automatically adds the generated file to the main.sass
 
-```bash
-npm install -g generator-angularjs-silex
-```
+`angularjs-silex:view`
 
-Finally, initiate the generator:
+Generates a view HTML file with the name given for the component that is asked for (provide --component=name to skip the
+prompt).
 
-```bash
-yo angularjs-silex
-```
+## TODO
 
-### Getting To Know Yeoman
-
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
-
+- Service/Factory/Constant/Provider/Value/Directive generators
+- Tests
 
 ## License
 
