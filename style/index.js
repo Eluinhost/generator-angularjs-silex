@@ -4,21 +4,8 @@ var ScriptBase = require('../scriptbase.js');
 
 
 var AngularjsSilexGenerator = ScriptBase.extend({
-    prompting: function () {
-        var done = this.async();
-
-        var prompts = [
-            {
-                name: 'component',
-                message: 'What component do you want to add the style to?',
-                default: 'home'
-            }
-        ];
-
-        this.prompt(prompts, function (props) {
-            this.component = props.component;
-            done();
-        }.bind(this));
+    prompting: function() {
+        this.componentPrompt();
     },
 
     //TODO add the sass partial to the base main.sass

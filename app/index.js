@@ -93,6 +93,21 @@ var AngularjsSilexGenerator = yeoman.generators.Base.extend({
             this.template('_Gruntfile.js', 'Gruntfile.js');
         },
 
+        component: function() {
+            this.composeWith(
+                'angularjs-silex:controller',
+                { args: ['Default'], options: { component: 'Default'}}
+            );
+            this.composeWith(
+                'angularjs-silex:style',
+                { args: ['Default'], options: { component: 'Default'}}
+            );
+            this.composeWith(
+                'angularjs-silex:view',
+                { args: ['Default'], options: { component: 'Default'}}
+            );
+        },
+
         projectfiles: function () {
             this.template('_package.json', 'package.json');
             this.template('_bower.json', 'bower.json');

@@ -8,21 +8,8 @@ var AngularjsSilexGenerator = ScriptBase.extend({
         this.controllerName = this.scriptName + 'Ctrl';
     },
 
-    prompting: function () {
-        var done = this.async();
-
-        var prompts = [
-            {
-                name: 'component',
-                message: 'What component do you want to add the controller to?',
-                default: 'home'
-            }
-        ];
-
-        this.prompt(prompts, function (props) {
-            this.component = props.component;
-            done();
-        }.bind(this));
+    prompting: function() {
+        this.componentPrompt();
     },
 
     //TODO add the js file to the base index.html
