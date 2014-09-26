@@ -83,10 +83,6 @@ var AngularjsSilexGenerator = yeoman.generators.Base.extend({
             this.src.copy('config/config_prod.yml', 'config/config_prod.yml');
         },
 
-        php: function() {
-            this.template('src/Home.php', 'src/Home.php');
-        },
-
         gruntfile: function() {
             this.template('_Gruntfile.js', 'Gruntfile.js');
         },
@@ -96,6 +92,13 @@ var AngularjsSilexGenerator = yeoman.generators.Base.extend({
                 'angularjs-silex:component',
                 { args: ['Default'] }
             );
+        },
+
+        api: function() {
+            this.composeWith(
+                'angularjs-silex:api',
+                { args: ['Default'] }
+            )
         },
 
         projectfiles: function () {

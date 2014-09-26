@@ -11,7 +11,5 @@ if($environment == 'dev') {
 
 $app->register(new Igorw\Silex\ConfigServiceProvider(__DIR__ . "/../../config/config_$environment.yml"));
 
-//register an API endpoint
-$app->get('/me', '<%= namespace %>\\Home::me');
-
+//register API endpoints
 $app->run();

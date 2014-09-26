@@ -18,7 +18,7 @@ angular.module('<%= scriptAppName %>')
             'age': 'Loading...'
         };
 
-        $http.get('/api/me').success(function (val) {
+        $http.get('/api/default').success(function (val) {
             $scope.me = val;
         });
     });

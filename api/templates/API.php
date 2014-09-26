@@ -6,10 +6,10 @@ namespace <%= namespace %>;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 
-class Home
+class <%= className %>
 {
 
-    public function me(Request $request, Application $app)
+    public function <%= "get" + className + "Action" %>(Request $request, Application $app)
     {
         return $app->json([
             'name' => $app['user']['name'],
