@@ -10,7 +10,7 @@ var AngularjsSilexGenerator = ScriptBase.extend({
         var prompts = [
             {
                 name: 'component',
-                message: 'What component do you want to add the controller to?',
+                message: 'What component do you want to add the view to?',
                 default: 'home'
             }
         ];
