@@ -1,11 +1,11 @@
 'use strict';
 
 /**
- * @ngdoc service
- * @name <%= scriptAppName %>.<%= scriptName %>
+ * @ngdoc directive
+ * @name <%= scriptAppName %>.directive.<%= scriptName %>
  * @description
  * # <%= scriptName %>
- * Service in the <%= appName %>.
+ * Directive in the <%= appName %>.
  */
 angular.module('<%= scriptAppName %>')
     .directive('<%= scriptName %>', function () {
