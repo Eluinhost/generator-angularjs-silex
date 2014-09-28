@@ -47,5 +47,13 @@ module.exports = NamedBase.extend({
             $('script[src="app.js"]').after('\n<script src="' + name +'"></script>');
             this.writeFileFromString($.html(), this.srcFolder + '/index.html');
         }
+    },
+
+    installStyle: function(name) {
+        var file = this.readFileAsString(this.srcFolder + '/main.sass');
+
+        if(file.search(this._escapeRegex('@import ' + name)) === -1) {
+            this.writeFileFromString(file + '\n@import ' + name, this.srcFolder + '/main.sass');
+        }
     }
 });

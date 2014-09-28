@@ -12,11 +12,7 @@ var AngularjsSilexGenerator = ScriptBase.extend({
     },
 
     install: function() {
-        var file = this.readFileAsString(this.srcFolder + '/main.sass');
-
-        if(file.search(this._escapeRegex('@import components/' + this.component + '/' + this.scriptName)) === -1) {
-            this.writeFileFromString(file + '\n@import components/' + this.component + '/' + this.scriptName, this.srcFolder + '/main.sass');
-        }
+        this.installStyle('components/' + this.component + '/' + this.scriptName);
     },
 
     _escapeRegex: function(string) {
