@@ -1,8 +1,6 @@
 'use strict';
 
 var ScriptBase = require('../scriptbase.js');
-var cheerio = require('cheerio');
-var fs = require('fs');
 
 var AngularjsSilexGenerator = ScriptBase.extend({
     initializing: function () {
@@ -18,14 +16,8 @@ var AngularjsSilexGenerator = ScriptBase.extend({
     },
 
     install: function() {
-        var $ = cheerio.load(this.readFileAsString(this.srcFolder + '/index.html'));
-
         var scriptName = 'components/' + this.component + '/' + this.scriptName + '.js';
-
-        if($('script[src="' + scriptName + '"]').length == 0) {
-            $('script[src="app.js"]').after('\n<script src="' + scriptName +'"></script>');
-            this.writeFileFromString($.html(), this.srcFolder + '/index.html');
-        }
+        this.installScript(scriptName);
     }
 });
 

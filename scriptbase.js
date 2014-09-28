@@ -38,5 +38,14 @@ module.exports = NamedBase.extend({
             this.component = this.options['component'];
             done();
         }
+    },
+
+    installScript: function(name) {
+        var $ = require('cheerio').load(this.readFileAsString(this.srcFolder + '/index.html'));
+
+        if($('script[src="' + name + '"]').length == 0) {
+            $('script[src="app.js"]').after('\n<script src="' + name +'"></script>');
+            this.writeFileFromString($.html(), this.srcFolder + '/index.html');
+        }
     }
 });
