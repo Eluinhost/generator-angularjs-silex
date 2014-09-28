@@ -16,8 +16,7 @@ var AngularjsSilexGenerator = ScriptBase.extend({
     },
 
     install: function() {
-        var scriptName = 'components/' + this.component + '/' + this.scriptName + '.js';
-        this.installScript(scriptName);
+        this.installScript(this.component, this.scriptName);
     }
 });
 

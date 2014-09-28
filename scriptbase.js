@@ -40,20 +40,28 @@ module.exports = NamedBase.extend({
         }
     },
 
-    installScript: function(name) {
+    installScript: function(component, name) {
         var $ = require('cheerio').load(this.readFileAsString(this.srcFolder + '/index.html'));
 
-        if($('script[src="' + name + '"]').length == 0) {
-            $('script[src="app.js"]').after('\n<script src="' + name +'"></script>');
+        var path = 'components/' + component + '/' + name + '.js';
+
+        if($('script[src="' + path + '"]').length === 0) {
+            $('script[src="app.js"]').after('\n<script src="' + path +'"></script>');
             this.writeFileFromString($.html(), this.srcFolder + '/index.html');
         }
     },
 
-    installStyle: function(name) {
+    installStyle: function(component, name) {
         var file = this.readFileAsString(this.srcFolder + '/main.sass');
 
-        if(file.search(this._escapeRegex('@import ' + name)) === -1) {
-            this.writeFileFromString(file + '\n@import ' + name, this.srcFolder + '/main.sass');
+        var path = 'components/' + component + '/' + name;
+
+        if(file.search(this._escapeRegex('@import ' + path)) === -1) {
+            this.writeFileFromString(file + '\n@import ' + path, this.srcFolder + '/main.sass');
         }
+    },
+
+    _escapeRegex: function(string) {
+        return string.replace(/([.*+?^${}()|\[\]\/\\])/g, "\\$1");
     }
 });

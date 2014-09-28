@@ -12,11 +12,7 @@ var AngularjsSilexGenerator = ScriptBase.extend({
     },
 
     install: function() {
-        this.installStyle('components/' + this.component + '/' + this.scriptName);
-    },
-
-    _escapeRegex: function(string) {
-        return string.replace(/([.*+?^${}()|\[\]\/\\])/g, "\\$1");
+        this.installStyle(this.component, this.scriptName);
     }
 });
 
