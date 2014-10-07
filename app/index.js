@@ -25,7 +25,7 @@ var AngularjsSilexGenerator = yeoman.generators.Base.extend({
             {
                 name: 'namespace',
                 message: 'What namespace do you want to use for the PHP files?',
-                default: 'Temp\\Temp'
+                default: 'Temp\\Temp\\'
             },
             {
                 name: 'author',
@@ -46,6 +46,9 @@ var AngularjsSilexGenerator = yeoman.generators.Base.extend({
 
         this.prompt(prompts, function (props) {
             this.namespace = props.namespace;
+            if(this.namespace !== '' && this.namespace.slice(-1) !== '\\') {
+                this.namespace = this.namespace + '\\';
+            }
             this.config.set('namespace', this.namespace);
             this.author = props.author;
             this.config.set('author', this.author);
