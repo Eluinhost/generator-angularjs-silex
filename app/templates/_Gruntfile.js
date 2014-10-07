@@ -236,7 +236,7 @@ module.exports = function (grunt) {
             html: ['<%%= yeoman.dist %>/**/*.html'],
             css: ['<%%= yeoman.dist %>/styles/**/*.css'],
             options: {
-                assetsDirs: ['<%%= yeoman.dist %>']
+                assetsDirs: ['<%%= yeoman.dist %>', '<%%= yeoman.dist %>/running_with_an_invalid_path_fixes_a_bug_with_usemin_stopping_css_filerev_rewrites_10/10_would_usemin_again']
             }
         },
 
