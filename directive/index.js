@@ -2,6 +2,10 @@
 var ScriptBase = require('../scriptbase.js');
 
 var AngularjsSilexGenerator = ScriptBase.extend({
+    initializing: function() {
+        this.scriptName = this.scriptName.substr(0,1).toLowerCase() + this.scriptName.substr(1);
+    },
+
     prompting: function() {
         this.componentPrompt();
     },
