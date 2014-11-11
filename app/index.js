@@ -93,14 +93,14 @@ var AngularjsSilexGenerator = yeoman.generators.Base.extend({
         component: function() {
             this.composeWith(
                 'angularjs-silex:component',
-                { args: ['Default'] }
+                { args: ['DefaultComponent'] }
             );
         },
 
         api: function() {
             this.composeWith(
                 'angularjs-silex:api',
-                { args: ['Default'] }
+                { args: ['DefaultComponent'] }
             )
         },
 
